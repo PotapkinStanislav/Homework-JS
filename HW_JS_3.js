@@ -1,6 +1,5 @@
-function checkProbabilityTheory() {
-    let count = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
-
+function checkProbabilityTheory(count) {
+    
     let evenCount = 0;
     let oddCount = 0;
 
@@ -24,4 +23,4 @@ function checkProbabilityTheory() {
     console.log("Відсоток парних до непарних: " + evenPercent + "% / " + oddPercent + "%");
 }
 
-checkProbabilityTheory();
+checkProbabilityTheory(5);
