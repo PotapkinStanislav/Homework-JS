@@ -1,7 +1,7 @@
 var services = {
-  "стрижка": "60 грн",
+  "стрижка": "60.65 грн",
   "гоління": "80 грн",
-  "Миття голови": "100 грн"
+  "Миття голови": "100.5 грн"
 };
 
 
@@ -9,7 +9,7 @@ services.price = function () {
   let sum = 0;
   for (let key in this) {
     if (typeof this[key] === "string" && this[key].includes("грн")) {
-      sum += parseInt(this[key]);
+      sum += parseFloat(this[key]);
     }
   }
   return sum + " грн";
@@ -19,7 +19,7 @@ services.minPrice = function () {
   let prices = [];
   for (let key in this) {
     if (typeof this[key] === "string" && this[key].includes("грн")) {
-      prices.push(parseInt(this[key]));
+      prices.push(parseFloat(this[key]));
     }
   }
   return Math.min(...prices) + " грн";
@@ -29,7 +29,7 @@ services.maxPrice = function () {
   let prices = [];
   for (let key in this) {
     if (typeof this[key] === "string" && this[key].includes("грн")) {
-      prices.push(parseInt(this[key]));
+      prices.push(parseFloat(this[key]));
     }
   }
   return Math.max(...prices) + " грн";
